@@ -1,35 +1,52 @@
-window.onload = function () {
-  const bmr = parseFloat(localStorage.getItem("bmr"));
+import { foodPlans } from "./data.js";
+
+window.addEventListener("DOMContentLoaded", () => {
+  const goal = localStorage.getItem("goal");
   const tdee = parseFloat(localStorage.getItem("tdee"));
   const protein = parseFloat(localStorage.getItem("protein"));
+  
+  const goalResult = document.getElementById("goalResult");
+  const tdeeResult = document.getElementById("tdeeResult");
+  const foodTable = document.getElementById("foodTable");
+  const container = document.getElementById("foodTableContainer");
 
-  let resultHTML = `
-    <p>BMR (พลังงานพื้นฐาน): ${bmr.toFixed(2)} kcal</p>
-    <p>TDEE (พลังงานที่ใช้ต่อวัน): ${tdee.toFixed(2)} kcal</p>
-    <p>โปรตีนที่ควรได้รับ: ${protein.toFixed(1)} กรัม/วัน</p>
-  `;
-
-  const matchPlan = foodPlans.find(plan => {
-    return (
-      tdee >= plan.energyRange[0] && tdee <= plan.energyRange[1] &&
-      protein >= plan.proteinRange[0] && protein <= plan.proteinRange[1]
-    );
-  });
-
-  if (matchPlan) {
-    resultHTML += "<h3>แผนการแลกเปลี่ยนอาหารที่เหมาะสม</h3><table>";
-    resultHTML += "<tr><th>หมวดอาหาร</th><th>จำนวนส่วน</th></tr>";
-    matchPlan.portions.forEach(item => {
-      resultHTML += `<tr><td>${item.type}</td><td>${item.total}</td></tr>`;
-    });
-    resultHTML += "</table>";
-  } else {
-    resultHTML += `
-      <div class="no-data">
-        <p>💬 ระบบยังไม่มีฐานข้อมูลนี้ โปรดติดตามในอนาคต</p>
-      </div>
-    `;
+  if (!goal || !tdee || !protein) {
+    container.innerHTML = "<p>ไม่พบข้อมูลการคำนวณ โปรดย้อนกลับไปกรอกใหม่</p>";
+    return;
   }
 
-  document.getElementById("result").innerHTML = resultHTML;
-};
+  goalResult.textContent = `เป้าหมายของคุณ: ${goal}`;
+  tdeeResult.textContent = `พลังงานที่ใช้ต่อวัน (TDEE): ${tdee.toFixed(2)} kcal`;
+
+  const matchPlan = foodPlans.find(plan =>
+    tdee >= plan.energyRange[0] &&
+    tdee <= plan.energyRange[1] &&
+    protein >= plan.proteinRange[0] &&
+    protein <= plan.proteinRange[1]
+  );
+
+  if (matchPlan) {
+    matchPlan.portions.forEach(item => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.type}</td>
+        <td>${item.total}</td>
+        <td>${item.meal3}</td>
+        <td>${item.meal2}</td>
+      `;
+      foodTable.appendChild(row);
+    });
+  } else {
+    container.innerHTML = `
+      <p style="color:#666; text-align:center; padding:1rem;">
+        ❗ ระบบยังไม่มีฐานข้อมูลนี้ โปรดติดตามในอนาคต
+      </p>
+    `;
+    document.querySelector("table").style.display = "none";
+  }
+});
+
+function goBack() {
+  window.location.href = "index.html";
+}
+window.goBack = goBack;
