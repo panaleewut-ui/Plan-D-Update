@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>คำนวณพลังงานที่ต้องการต่อวัน</title>
+  <title>กรอกข้อมูลพื้นฐาน</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h2>คำนวณพลังงานที่ต้องการต่อวัน (TDEE)</h2>
+    <h2>ข้อมูลพื้นฐาน</h2>
 
     <form id="infoForm">
       <div class="form-group">
         <label>อายุ (ปี)</label>
-        <input type="number" id="age" placeholder="กรอกอายุของคุณ" required>
+        <input type="number" id="age" placeholder="กรอกอายุของคุณ">
       </div>
 
       <div class="form-group">
@@ -26,19 +26,38 @@
 
       <div class="form-group">
         <label>น้ำหนัก (กิโลกรัม)</label>
-        <input type="number" id="weight" placeholder="เช่น 55" required>
+        <input type="number" id="weight" placeholder="เช่น 55">
       </div>
 
       <div class="form-group">
         <label>ส่วนสูง (เซนติเมตร)</label>
-        <input type="number" id="height" placeholder="เช่น 160" required>
+        <input type="number" id="height" placeholder="เช่น 160">
       </div>
 
       <div class="form-group">
         <label>ระดับกิจกรรม</label>
         <select id="activity">
-          <option value="1.0">ขณะพัก (นอนหรือนั่งทั้งวัน)</option>
-          <option value="1.5">กิจกรรมเบามาก (นั่ง ยืน ทำงานบ้านเบาๆ)</option>
-          <option value="2.5">กิจกรรมเบา (เดินช้า ๆ ซ่อมของ ทำความสะอาด)</option>
-          <option value="5.0">กิจกรรมปานกลาง (เดินเร็ว ขุดดิน ปั่นจักรยาน)</option>
-          <option value="7.0">
+          <option value="1.0">ขณะพัก เช่น นอนหลับ นอนเล่น</option>
+          <option value="1.5">กิจกรรมเบามาก เช่น นั่ง ยืน ขับรถ ทำอาหาร เล่นดนตรี</option>
+          <option value="2.5">กิจกรรมเบา เช่น เดิน 4-5 กม./ชม. ซ่อมรถ ทำความสะอาด</option>
+          <option value="5.0">กิจกรรมปานกลาง เช่น เดิน 5-6 กม./ชม. ตัดหญ้า ขุดดิน ปั่นจักรยาน</option>
+          <option value="7.0">กิจกรรมหนัก เช่น วิ่ง ว่ายน้ำ เล่นฟุตบอล เต้นแอโรบิก</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="goal">เป้าหมาย:</label>
+        <select id="goal">
+          <option value="maintain">คงน้ำหนัก</option>
+          <option value="lose">ลดน้ำหนัก (-500 kcal)</option>
+          <option value="gain">เพิ่มน้ำหนัก (+500 kcal)</option>
+        </select>
+      </div>
+
+      <button type="button" onclick="calculateTDEE()">คำนวณ</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
