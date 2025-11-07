@@ -10,11 +10,24 @@
 <body>
   <div class="container">
     <h2>ผลลัพธ์ของคุณ</h2>
-    <div id="result"></div>
+
+    <div id="foodTableContainer">
+      <p id="goalResult"></p>
+      <p id="tdeeResult"></p>
+      <table id="foodTable" border="1" style="width:100%; margin-top:1rem;">
+        <tr>
+          <th>หมวดอาหาร</th>
+          <th>รวมทั้งหมด (ส่วนแลกเปลี่ยน)</th>
+          <th>3 มื้อ</th>
+          <th>2 มื้อ</th>
+        </tr>
+      </table>
+    </div>
+
     <button onclick="location.href='index.html'" class="main-btn">ย้อนกลับหน้าแรก</button>
   </div>
 
-   <script src="data.js"></script>
+  <script src="data.js"></script>
   <script type="module" src="result.js"></script>
 </body>
 </html>
