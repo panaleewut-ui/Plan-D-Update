@@ -1,5 +1,5 @@
 // data.js
-const foodPlans = [
+export const foodPlans = [
   {
     energyRange: [1601, 1800],
     proteinRange: [40, 44],
@@ -234,3 +234,4 @@ const foodPlans = [
       { type: "น้ำตาลเพิ่มสำหรับประกอบอาหาร", total: 3 },
     ]
   },
+];
