@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>คำนวณ TDEE 💪</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLAN :D</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>คำนวณพลังงานที่ใช้ต่อวัน (TDEE)</h1>
+  <div class="container">
+    <h1>WELCOME TO PLAN :D</h1>
+    <p>สร้างตารางกำหนดปริมาณส่วนของอาหารตามความต้องการพลังงานของคุณ</p>
 
-  <form id="tdee-form">
-    <label for="gender">เพศ:</label>
-    <select id="gender" required>
-      <option value="male">ชาย</option>
-      <option value="female">หญิง</option>
-    </select>
+    <form id="tdee-form">
+      <div class="form-group">
+        <label>เพศ:</label>
+        <select id="gender" required>
+          <option value="male">ชาย</option>
+          <option value="female">หญิง</option>
+        </select>
+      </div>
 
-    <label for="age">อายุ (ปี):</label>
-    <input type="number" id="age" required>
+      <div class="form-group">
+        <label>อายุ (ปี):</label>
+        <input type="number" id="age" placeholder="กรอกอายุของคุณ" required />
+      </div>
 
-    <label for="weight">น้ำหนัก (กก.):</label>
-    <input type="number" id="weight" required>
+      <div class="form-group">
+        <label>น้ำหนัก (กิโลกรัม):</label>
+        <input type="number" id="weight" placeholder="เช่น 55" required />
+      </div>
 
-    <label for="height">ส่วนสูง (ซม.):</label>
-    <input type="number" id="height" required>
+      <div class="form-group">
+        <label>ส่วนสูง (เซนติเมตร):</label>
+        <input type="number" id="height" placeholder="เช่น 160" required />
+      </div>
 
-    <label for="activity">ระดับกิจกรรม:</label>
-    <select id="activity" required>
-      <option value="1.2">นั่งทำงานทั้งวัน ไม่ออกกำลังกาย</option>
-      <option value="1.375">ออกกำลังกายเล็กน้อย 1–2 วัน/สัปดาห์</option>
-      <option value="1.55">ออกกำลังกายปานกลาง 3–5 วัน/สัปดาห์</option>
-      <option value="1.725">ออกกำลังกายหนัก 6–7 วัน/สัปดาห์</option>
-      <option value="1.9">ออกกำลังกายหนักมาก หรือใช้แรงงาน</option>
-    </select>
+      <div class="form-group">
+        <label>ระดับกิจกรรม:</label>
+        <select id="activity" required>
+          <option value="1.0">ขณะพัก (เช่น นอนหลับ นอนเล่น)</option>
+          <option value="1.5">กิจกรรมเบามาก (เช่น นั่ง ยืน ทำอาหาร)</option>
+          <option value="2.5">กิจกรรมเบา (เช่น เดิน 4–5 กม./ชม.)</option>
+          <option value="5.0">กิจกรรมปานกลาง (เช่น ปั่นจักรยาน ขุดดิน)</option>
+          <option value="7.0">กิจกรรมหนัก (เช่น วิ่ง ฟุตบอล แอโรบิก)</option>
+        </select>
+      </div>
 
-    <button type="submit">คำนวณ</button>
-  </form>
+      <div class="form-group">
+        <label>เป้าหมาย:</label>
+        <select id="goal">
+          <option value="maintain">คงน้ำหนัก</option>
+          <option value="lose">ลดน้ำหนัก (-500 kcal)</option>
+          <option value="gain">เพิ่มน้ำหนัก (+500 kcal)</option>
+        </select>
+      </div>
 
-  <div id="result">
-    <h2>ผลลัพธ์</h2>
-    <p id="bmr-result"></p>
-    <p id="tdee-result"></p>
-    <p id="protein-result"></p>
+      <button type="submit">คำนวณ</button>
+    </form>
+
+    <div id="results">
+      <p id="bmr-result"></p>
+      <p id="tdee-result"></p>
+      <p id="protein-result"></p>
+    </div>
   </div>
 
-  <script src="result.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
