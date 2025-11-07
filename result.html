@@ -3,33 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ผลลัพธ์ PLAN :D</title>
+  <title>ผลลัพธ์ | PLAN :D</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h2>ผลลัพธ์ของคุณ</h2>
-
-    <div class="results">
-      <p id="goalResult"></p>
-      <p id="tdeeResult"></p>
-    </div>
-
-    <h3>ส่วนของอาหารตามหมวด</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>หมวดอาหาร</th>
-          <th>จำนวนส่วน (ทั้งวัน)</th>
-          <th>แบ่ง 3 มื้อ</th>
-          <th>แบ่ง 2 มื้อ</th>
-        </tr>
-      </thead>
-      <tbody id="foodTable"></tbody>
-    </table>
+    <div id="result"></div>
+    <button onclick="location.href='index.html'" class="main-btn">ย้อนกลับหน้าแรก</button>
   </div>
 
-  <script src="data.js" type="module"></script>
-  <script src="script.js" type="module"></script>
+  <script src="data.js"></script>
+  <script src="result.js"></script>
 </body>
 </html>
