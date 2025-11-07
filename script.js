@@ -6,7 +6,6 @@ document.getElementById("tdee-form").addEventListener("submit", function (e) {
   const weight = parseFloat(document.getElementById("weight").value);
   const height = parseFloat(document.getElementById("height").value);
   const activity = parseFloat(document.getElementById("activity").value);
-  const goal = document.getElementById("goal").value;
 
   let bmr;
   if (gender === "male") {
@@ -15,16 +14,12 @@ document.getElementById("tdee-form").addEventListener("submit", function (e) {
     bmr = 655.1 + (9.6 * weight) + (1.9 * height) - (4.7 * age);
   }
 
-  let tdee = bmr * activity;
-  if (goal === "lose") tdee -= 500;
-  else if (goal === "gain") tdee += 500;
-
+  const tdee = bmr * activity;
   const protein = weight * 1.0;
 
-  localStorage.setItem("tdee", tdee);
   localStorage.setItem("bmr", bmr);
+  localStorage.setItem("tdee", tdee);
   localStorage.setItem("protein", protein);
-  localStorage.setItem("goal", goal);
 
   window.location.href = "result.html";
 });
