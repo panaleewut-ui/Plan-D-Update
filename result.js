@@ -1,3 +1,4 @@
+console.log("result.js ทำงานแล้ว");
 import { foodPlans } from "./data.js";
 
 window.addEventListener("DOMContentLoaded", () => {
