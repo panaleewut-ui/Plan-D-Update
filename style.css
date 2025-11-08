@@ -54,10 +54,49 @@ input, select {
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-table {
+/* ===========================
+   🎨 ตารางผลลัพธ์
+=========================== */
+.result-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 25px;
+  font-family: "Prompt", sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.result-table th, 
+.result-table td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.result-table th {
+  background-color: #e9f5ef;
+  color: #2d6a4f;
+  font-weight: 600;
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.result-table td:first-child {
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .result-table {
+    font-size: 0.9rem;
+  }
+  .result-table th, .result-table td {
+    padding: 10px 6px;
+  }
 }
 
 th, td {
