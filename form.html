@@ -3,44 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>คำนวณ TDEE | PLAN :D</title>
-  <link rel="stylesheet" href="style.css">
+  <title>กรอกข้อมูล | PLAN :D</title>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="form-page">
   <div class="container">
     <h2>กรอกข้อมูลของคุณ</h2>
-    <form id="tdee-form">
+
+    <form id="userForm">
       <label>เพศ:</label>
-      <select id="gender" required>
+      <select id="gender">
         <option value="male">ชาย</option>
         <option value="female">หญิง</option>
       </select>
 
       <label>อายุ (ปี):</label>
-      <input type="number" id="age" required>
+      <input type="number" id="age" placeholder="กรอกอายุของคุณ">
 
       <label>น้ำหนัก (กก.):</label>
-      <input type="number" id="weight" required>
+      <input type="number" id="weight" placeholder="กรอกน้ำหนักของคุณ">
 
       <label>ส่วนสูง (ซม.):</label>
-      <input type="number" id="height" required>
+      <input type="number" id="height" placeholder="กรอกส่วนสูงของคุณ">
 
       <label>ระดับกิจกรรม:</label>
-      <select id="activity" required>
+      <select id="activity">
         <option value="1.2">ไม่ค่อยออกกำลังกาย</option>
-        <option value="1.375">ออกกำลังเล็กน้อย (1–3 วัน/สัปดาห์)</option>
-        <option value="1.55">ออกกำลังปานกลาง (3–5 วัน/สัปดาห์)</option>
-        <option value="1.725">ออกกำลังหนัก (6–7 วัน/สัปดาห์)</option>
-        <option value="1.9">ออกกำลังหนักมาก</option>
+        <option value="1.375">ออกกำลังกายน้อย</option>
+        <option value="1.55">ออกกำลังกายปานกลาง</option>
+        <option value="1.725">ออกกำลังกายบ่อย</option>
+        <option value="1.9">ออกกำลังกายหนักมาก</option>
       </select>
 
-      <label for="goal">เป้าหมายของคุณ</label>
-      <select id="goal" name="goal" required>
-        <option value="">-- กรุณาเลือกเป้าหมาย --</option>
-        <option value="ลดน้ำหนัก">ลดน้ำหนัก</option>
-        <option value="รักษาน้ำหนัก">รักษาน้ำหนัก</option>
-        <option value="เพิ่มน้ำหนัก">เพิ่มน้ำหนัก</option>
+      <label>เป้าหมายของคุณ:</label>
+      <select id="goal">
+        <option value="maintain">คงน้ำหนัก</option>
+        <option value="lose">ลดน้ำหนัก</option>
+        <option value="gain">เพิ่มน้ำหนัก</option>
       </select>
 
       <button type="submit" class="main-btn">คำนวณเลย!</button>
