@@ -1,93 +1,123 @@
-/* 🌿 FONT & THEME */
+/* 🌼 ฟ้อนต์และธีม */
 body {
   font-family: 'Prompt', sans-serif;
-  background: linear-gradient(135deg, #fffaf0, #e8f9f3);
-  color: #333;
+  background: linear-gradient(135deg, #fefcfb, #f0faf7);
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* 🌼 MAIN CONTAINER */
+/* 💡 ถ้าอยากใส่ภาพพื้นหลังให้เพิ่มบรรทัดนี้ */
+body {
+  background-image: url("images/bg.jpg"); /* 👈 เปลี่ยนชื่อไฟล์ตามจริง */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 🌿 โครงร่างกลางหน้า */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
-  background: #ffffffcc;
   padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
 }
 
-/* 🧡 HEADER */
+/* 🧡 หัวข้อ */
 h1, h2 {
   text-align: center;
   color: #ff914d;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 p {
   text-align: center;
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
-/* 💚 BUTTON */
+/* 🌈 ปุ่มหลัก */
 .main-btn {
   display: block;
   width: 100%;
-  background: linear-gradient(90deg, #ffa94d, #8fd19e);
-  color: white;
-  font-weight: 600;
+  background: linear-gradient(90deg, #ffa94d, #7ac7a6);
+  color: #fff;
   border: none;
-  padding: 0.8rem;
-  border-radius: 10px;
-  cursor: pointer;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
   font-size: 1.1rem;
-  transition: 0.25s;
+  cursor: pointer;
+  font-weight: 500;
   margin-top: 1rem;
+  transition: all 0.3s ease;
 }
 
 .main-btn:hover {
-  background: linear-gradient(90deg, #ffc65c, #7ac7a6);
+  background: linear-gradient(90deg, #ffc65c, #5fbf9f);
   transform: translateY(-2px);
 }
 
-/* 🌈 TABLE */
+/* 🩵 ตารางแผนอาหาร */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  background-color: #fff;
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 15px;
   overflow: hidden;
-  font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: 1rem;
 }
 
 th {
-  background-color: #8fd19e;
-  color: #fff;
+  background: linear-gradient(90deg, #8fd19e, #80d1d0);
+  color: white;
+  padding: 0.9rem;
+  font-weight: 600;
   text-align: center;
-  padding: 0.8rem;
 }
 
 td {
   padding: 0.8rem;
   text-align: center;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
 }
 
 tr:last-child td {
   border-bottom: none;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
+/* 🪶 กล่องข้อความ */
+#goalResult, #tdeeResult {
+  background: #ffffffd8;
+  border: 1px solid #e5e5e5;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #444;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
 }
 
-/* 📱 RESPONSIVE (มือถือ) */
+/* 📱 การแสดงผลบนมือถือ */
 @media screen and (max-width: 600px) {
   .container {
     margin: 1rem;
-    padding: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  h1, h2 {
+    font-size: 1.3rem;
   }
 
   table {
@@ -98,12 +128,24 @@ tr:nth-child(even) {
     padding: 0.6rem;
   }
 
-  h2 {
-    font-size: 1.3rem;
-  }
-
   .main-btn {
     font-size: 1rem;
-    padding: 0.7rem;
+    padding: 0.8rem;
   }
+}
+
+/* ✨ ลิงก์เพิ่มเติม (คู่มือ/แบบประเมินในอนาคต) */
+.extra-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.extra-links a {
+  color: #3bb78f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
 }
