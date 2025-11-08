@@ -1,151 +1,137 @@
-/* 🌼 ฟ้อนต์และธีม */
+/* ===============================
+   PLAN :D | Style.css
+   โทน: เขียว ฟ้า เหลืองอุ่น / ดีไซน์นุ่มนวล
+   รองรับมือถือและเดสก์ท็อป
+================================= */
+
+/* ฟ้อนต์และโครงสร้างพื้นฐาน */
 body {
   font-family: 'Prompt', sans-serif;
-  background: linear-gradient(135deg, #fefcfb, #f0faf7);
+  background: linear-gradient(160deg, #e7f7ef, #fefae0);
   background-attachment: fixed;
   margin: 0;
   padding: 0;
   color: #333;
-  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* 💡 ถ้าอยากใส่ภาพพื้นหลังให้เพิ่มบรรทัดนี้ */
-body {
-  background-image: url("images/bg.jpg"); /* 👈 เปลี่ยนชื่อไฟล์ตามจริง */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* 🌿 โครงร่างกลางหน้า */
+/* กล่องเนื้อหา */
 .container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(8px);
-}
-
-/* 🧡 หัวข้อ */
-h1, h2 {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 90%;
+  max-width: 500px;
   text-align: center;
-  color: #ff914d;
-  margin-bottom: 1rem;
-  font-weight: 600;
 }
 
-p {
-  text-align: center;
-  color: #555;
-  margin-bottom: 1rem;
+/* หัวข้อ */
+h1, h2, h3 {
+  color: #2e6f51;
+  margin-bottom: 0.8rem;
 }
 
-/* 🌈 ปุ่มหลัก */
+/* ปุ่มหลัก */
 .main-btn {
-  display: block;
-  width: 100%;
-  background: linear-gradient(90deg, #ffa94d, #7ac7a6);
-  color: #fff;
+  background: linear-gradient(90deg, #81c784, #4db6ac);
+  color: white;
   border: none;
-  padding: 0.9rem 1.2rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 500;
   margin-top: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .main-btn:hover {
-  background: linear-gradient(90deg, #ffc65c, #5fbf9f);
+  background: linear-gradient(90deg, #66bb6a, #26a69a);
   transform: translateY(-2px);
 }
 
-/* 🩵 ตารางแผนอาหาร */
+/* ช่องกรอกข้อมูล */
+input, select {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* ตารางผลลัพธ์ */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 15px;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  background-color: #fff;
 }
 
 th {
-  background: linear-gradient(90deg, #8fd19e, #80d1d0);
-  color: white;
-  padding: 0.9rem;
+  background-color: #e8f5e9;
   font-weight: 600;
-  text-align: center;
+  color: #2e7d32;
 }
 
-td {
-  padding: 0.8rem;
-  text-align: center;
-  border-bottom: 1px solid #eee;
+/* ปุ่มสลับตาราง */
+#toggleTableView {
+  background: linear-gradient(90deg, #ffb74d, #64b5f6);
+  margin-bottom: 0.8rem;
 }
 
-tr:nth-child(even) {
-  background-color: #f8f9fa;
+/* เวลาตารางว่าง */
+#foodTableContainer p {
+  color: #777;
+  margin: 0.5rem 0;
 }
 
-tr:last-child td {
-  border-bottom: none;
+/* เพิ่มเงาเล็กน้อยให้ดูมีมิติ */
+table tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
-/* 🪶 กล่องข้อความ */
-#goalResult, #tdeeResult {
-  background: #ffffffd8;
-  border: 1px solid #e5e5e5;
-  border-radius: 15px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  color: #444;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+table tr:hover {
+  background-color: #f1f8e9;
 }
 
-/* 📱 การแสดงผลบนมือถือ */
-@media screen and (max-width: 600px) {
+/* สำหรับมือถือ */
+@media (max-width: 600px) {
   .container {
-    margin: 1rem;
-    padding: 1.5rem;
+    width: 92%;
+    padding: 1.5rem 1rem;
   }
 
-  h1, h2 {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
     font-size: 1.3rem;
+  }
+
+  .main-btn {
+    width: 100%;
+    padding: 0.9rem;
   }
 
   table {
     font-size: 0.85rem;
   }
-
-  th, td {
-    padding: 0.6rem;
-  }
-
-  .main-btn {
-    font-size: 1rem;
-    padding: 0.8rem;
-  }
-}
-
-/* ✨ ลิงก์เพิ่มเติม (คู่มือ/แบบประเมินในอนาคต) */
-.extra-links {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.extra-links a {
-  color: #3bb78f;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.extra-links a:hover {
-  text-decoration: underline;
 }
