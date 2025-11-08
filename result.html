@@ -7,20 +7,23 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="result-page">
   <div class="container">
     <h2>ผลลัพธ์ของคุณ</h2>
+    <p id="goalResult"></p>
+    <p id="tdeeResult"></p>
 
     <div id="foodTableContainer">
-      <p id="goalResult"></p>
-      <p id="tdeeResult"></p>
-      <table id="foodTable" border="1" style="width:100%; margin-top:1rem;">
-        <tr>
-          <th>หมวดอาหาร</th>
-          <th>รวมทั้งหมด (ส่วนแลกเปลี่ยน)</th>
-          <th>3 มื้อ</th>
-          <th>2 มื้อ</th>
-        </tr>
+      <table id="foodTable">
+        <thead>
+          <tr>
+            <th>หมวดอาหาร</th>
+            <th>รวมทั้งหมด (ส่วนแลกเปลี่ยน)</th>
+            <th>3 มื้อ</th>
+            <th>2 มื้อ</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
       </table>
     </div>
 
@@ -30,8 +33,6 @@
 
 
 <script src="data.js"></script>
-
-<!-- โหลดเฉพาะ result.js เป็น module -->
 <script type="module" src="result.js"></script>
 </body>
 </html>
