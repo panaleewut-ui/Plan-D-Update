@@ -1,137 +1,135 @@
-/* ===============================
-   PLAN :D | Style.css
-   โทน: เขียว ฟ้า เหลืองอุ่น / ดีไซน์นุ่มนวล
-   รองรับมือถือและเดสก์ท็อป
-================================= */
-
-/* ฟ้อนต์และโครงสร้างพื้นฐาน */
 body {
   font-family: 'Prompt', sans-serif;
-  background: linear-gradient(160deg, #e7f7ef, #fefae0);
-  background-attachment: fixed;
+  background: linear-gradient(160deg, #fdfcfb, #e2f7e1);
   margin: 0;
   padding: 0;
-  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color: #333;
 }
 
-/* กล่องเนื้อหา */
 .container {
-  background: #fff;
-  padding: 2rem 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   width: 90%;
-  max-width: 500px;
+  max-width: 450px;
   text-align: center;
 }
 
-/* หัวข้อ */
-h1, h2, h3 {
-  color: #2e6f51;
-  margin-bottom: 0.8rem;
+/* โลโก้ */
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+}
+
+.app-name {
+  font-size: 2.2rem;
+  color: #ff914d;
+  margin: 0.5rem 0;
+}
+
+.tagline {
+  color: #666;
+  margin-bottom: 2rem;
 }
 
 /* ปุ่มหลัก */
 .main-btn {
-  background: linear-gradient(90deg, #81c784, #4db6ac);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  color: #333;
   font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 .main-btn:hover {
-  background: linear-gradient(90deg, #66bb6a, #26a69a);
-  transform: translateY(-2px);
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(255,179,71,0.4);
 }
 
-/* ช่องกรอกข้อมูล */
+/* ปุ่มรอง */
+.secondary-btn {
+  background: #fff;
+  border: 1.5px solid #ccc;
+  border-radius: 20px;
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-btn:hover {
+  background: #f9f9f9;
+}
+
+/* กลุ่มปุ่มด้านล่าง */
+.bottom-buttons {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ฟอร์ม */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
 input, select {
-  width: 100%;
-  padding: 0.7rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 0.4rem;
-  margin-bottom: 1rem;
-  font-family: inherit;
+  padding: 0.6rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
   font-size: 1rem;
-  box-sizing: border-box;
 }
 
-/* ตารางผลลัพธ์ */
+/* ตาราง */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.2rem;
-  font-size: 0.95rem;
-  border-radius: 12px;
+  margin-top: 1.5rem;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 th, td {
-  padding: 0.75rem;
-  border: 1px solid #e0e0e0;
+  padding: 0.6rem;
   text-align: center;
-  background-color: #fff;
+  border-bottom: 1px solid #eee;
 }
 
 th {
-  background-color: #e8f5e9;
-  font-weight: 600;
-  color: #2e7d32;
+  background-color: #ffefa1;
+  color: #333;
 }
 
-/* ปุ่มสลับตาราง */
-#toggleTableView {
-  background: linear-gradient(90deg, #ffb74d, #64b5f6);
-  margin-bottom: 0.8rem;
+tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-/* เวลาตารางว่าง */
-#foodTableContainer p {
-  color: #777;
-  margin: 0.5rem 0;
-}
-
-/* เพิ่มเงาเล็กน้อยให้ดูมีมิติ */
-table tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-table tr:hover {
-  background-color: #f1f8e9;
-}
-
-/* สำหรับมือถือ */
 @media (max-width: 600px) {
   .container {
-    width: 92%;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
   }
-
-  h1 {
-    font-size: 1.6rem;
+  .app-name {
+    font-size: 1.8rem;
   }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
   .main-btn {
-    width: 100%;
-    padding: 0.9rem;
-  }
-
-  table {
-    font-size: 0.85rem;
+    padding: 0.7rem;
   }
 }
