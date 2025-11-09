@@ -162,3 +162,68 @@ tr:nth-child(even) {
     height: 80px;
   }
 }
+/* จัดหน้าใหม่ให้สมดุล */
+.home-page {
+  background: linear-gradient(145deg, #f8fff7, #e0f7e9);
+  background-image: url('bg-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    background-image: url('bg-phone.jpg');
+  }
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: 2rem;
+}
+
+.bottom-buttons {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.secondary-btn {
+  width: 80%;
+  max-width: 250px;
+  background-color: #ffffffb3;
+  border: 1.5px solid #cfcfcf;
+  border-radius: 25px;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  transition: 0.25s;
+}
+
+.secondary-btn:hover {
+  background-color: #fff;
+  transform: scale(1.02);
+}
+
+.main-btn {
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  color: #333;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 250px;
+}
+
+.main-btn:hover {
+  box-shadow: 0 4px 10px rgba(255,179,71,0.4);
+  transform: scale(1.04);
+}
