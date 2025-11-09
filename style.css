@@ -30,9 +30,10 @@ body {
   margin: 2rem;
 }
 
+/* ปรับโลโก้ให้ใหญ่ขึ้นและไม่บีบ */
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: auto;
   margin-bottom: 1rem;
 }
 
@@ -157,10 +158,7 @@ tr:nth-child(even) {
     padding: 0.8rem;
   }
 
-  .logo {
-    width: 80px;
-    height: 80px;
-  }
+
 }
 /* จัดหน้าใหม่ให้สมดุล */
 .home-page {
@@ -226,4 +224,11 @@ tr:nth-child(even) {
 .main-btn:hover {
   box-shadow: 0 4px 10px rgba(255,179,71,0.4);
   transform: scale(1.04);
+}
+
+ /* ปุ่มคำนวณให้อยู่ตรงกลาง */
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
