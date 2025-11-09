@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("tdee-form");
+  const form = document.getElementById("userForm"); // ✅ แก้ให้ตรงกับ form.html
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const activity = parseFloat(document.getElementById("activity").value);
     const goal = document.getElementById("goal").value;
 
-    // ✅ สูตรคำนวณ BMR ตามของ Atom
+    // ✅ สูตรคำนวณ BMR
     let bmr;
     if (gender === "male") {
       bmr = 66.5 + (13.8 * weight) + (5 * height) - (6.8 * age);
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tdee = bmr * activity;
     const protein = weight * 1.0; // โปรตีน 1 กรัม/กก.
 
-    // ✅ บันทึกลง localStorage
+    // ✅ เก็บข้อมูลใน localStorage
     localStorage.setItem("gender", gender);
     localStorage.setItem("age", age);
     localStorage.setItem("weight", weight);
