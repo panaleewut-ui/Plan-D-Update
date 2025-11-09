@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("userForm"); // ✅ แก้ให้ตรงกับ form.html
+  const form = document.getElementById("userForm");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -19,8 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
       bmr = 655.1 + (9.6 * weight) + (1.9 * height) - (4.7 * age);
     }
 
-    const tdee = bmr * activity;
-    const protein = weight * 1.0; // โปรตีน 1 กรัม/กก.
+    // ✅ คำนวณ TDEE
+    let tdee = bmr * activity;
+
+    // ✅ ปรับตามเป้าหมาย
+    if (goal === "lose") {
+      tdee -= 500;
+    } else if (goal === "gain") {
+      tdee += 500;
+    }
+
+    // ✅ โปรตีน (1 กรัม/กก.)
+    const protein = weight * 1.0;
 
     // ✅ เก็บข้อมูลใน localStorage
     localStorage.setItem("gender", gender);
